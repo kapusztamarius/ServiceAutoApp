@@ -1,0 +1,34 @@
+<div class="container">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="text-center border border-light p-5 justify-content-center">
+    
+    <div class="h-100 d-inline-block">
+        <small *ngIf=invalidLogin>Invalid Credetials</small>
+    </div>
+
+    <h2>Login</h2>
+
+    <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" class="form-control" formControlName="username" placeholder="Username"/>
+          <!-- <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+              <div *ngIf="f.username.errors.required">Username is required</div>
+          </div> -->
+      </div>
+
+      <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" formControlName="password" placeholder="Password"/>
+          <!-- <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+              <div *ngIf="f.password.errors.required">Password is required</div>
+          </div> -->
+      </div>
+      
+      <div class="form-group">
+          <button class="btn btn-primary">
+              <!-- <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span> -->
+              Login
+          </button>
+          <a routerLink="/register" class="btn btn-link">Register</a>
+      </div>
+  </form>
+</div>
