@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+  <div class="w-75">
+
+
+<div class="container">
+  <h1>Comanda</h1>
+  
+    <div class="alert alert-warning" *ngIf="orderForm.dirty && orderForm.invalid">Enter valid values</div>
+
+    <form (ngSubmit)="!orderForm.invalid && saveOrder()" #orderForm="ngForm">
+
+      <div class="form-group row">
+        <fieldset class="form-group col-sm-3">
+          <label>Numar Masina</label>
+          <input type = "text" [(ngModel)]="order.numarMasina" class ="form-control" name="numarMasina" required="required" minlength="5" [disabled]="order.completata === 1">
+        </fieldset>
+
+        <fieldset class="form-group col-sm-5">
+          <label>Nume Client</label>
+          <input type = "text" [(ngModel)]="order.numeClient" class ="form-control" name="numeClient" required="required" [disabled]="order.completata === 1">
+        </fieldset>
+
+        <fieldset class="form-group col-sm-3">
+          <label>Numar Telefon</label>
+          <input type = "text" [(ngModel)]="order.numarTelefon" class ="form-control" name="numarTelefon" required="required" [disabled]="order.completata === 1">
+        </fieldset>
+      </div>
+
+      <fieldset class="form-group col-sm-11">
+        <label>Descriere</label>
+        <textarea type = "text" [(ngModel)]="order.descriere" class ="form-control" name="descriere" [disabled]="order.completata === 1"></textarea>
+      </fieldset>
+
+      <fieldset *ngIf="order.completata" class="form-group col-sm-11">
+        <label>Reclamatie</label>
+        <textarea type = "text" [(ngModel)]="order.reclamatie" class ="form-control" name="reclamatie"></textarea>
+      </fieldset>
+
+      <button type="submit" class="btn btn-success">Submit</button>
+
+  </form>
+</div>
+</div>
+</div>

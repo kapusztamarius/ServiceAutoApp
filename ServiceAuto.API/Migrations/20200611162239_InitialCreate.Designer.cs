@@ -8,8 +8,8 @@ using ServiceAuto.API.Data;
 namespace ServiceAuto.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20200610165700_dbupdate1")]
-    partial class dbupdate1
+    [Migration("20200611162239_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -21,6 +21,9 @@ namespace ServiceAuto.API.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Completata")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Descriere")
@@ -36,6 +39,12 @@ namespace ServiceAuto.API.Migrations
 
                     b.Property<string>("NumeClient")
                         .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("PostLucru")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Reclamatie")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -58,8 +67,8 @@ namespace ServiceAuto.API.Migrations
                     b.Property<string>("Username")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("WorkingPlace")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("WorkingPlace")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 

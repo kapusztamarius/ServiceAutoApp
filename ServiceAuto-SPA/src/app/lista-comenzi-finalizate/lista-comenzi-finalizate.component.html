@@ -1,0 +1,33 @@
+<div class="row justify-content-center">
+  <div class="w-75">
+  <h1>Comenzi Incheiate</h1>
+  
+  <table class="table">
+    <!-- <caption>My Todo's</caption> -->
+    <thead>
+      <tr>
+        <!-- <th>id</th> -->
+        <th>Descriere</th>
+        <th>Numar Masina</th>
+        <th>Post de lucru</th>
+        <th *ngIf="getWorkingPlace() === 0">Reclamatie</th>
+        <th *ngIf="getWorkingPlace() === 0">Redeschide</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders">
+        <!-- <td>{{todo.id}}</td> -->
+        <td>{{order.descriere}}</td>
+        <td>{{order.numarMasina}}</td>
+        <td>{{order.postLucru}}</td>
+        <td *ngIf="getWorkingPlace() === 0"><button (click)="updateTodo(order.id)" class="btn btn-warning">Reclamatie</button></td>
+        <td *ngIf="getWorkingPlace() === 0"><button (click)="redeschideComanda(order.id)" class="btn btn-warning">Redeschide</button></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <!-- <div class="row">
+    <button (click)="addOrder()" class="btn btn-success">Add</button>
+  </div> -->
+  </div>
+  </div>

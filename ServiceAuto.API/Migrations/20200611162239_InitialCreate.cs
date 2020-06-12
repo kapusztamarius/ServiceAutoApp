@@ -15,11 +15,30 @@ namespace ServiceAuto.API.Migrations
                     NumarMasina = table.Column<string>(nullable: false),
                     NumeClient = table.Column<string>(nullable: false),
                     NumarTelefon = table.Column<string>(nullable: false),
-                    Descriere = table.Column<string>(nullable: true)
+                    Descriere = table.Column<string>(nullable: true),
+                    PostLucru = table.Column<int>(nullable: false),
+                    Completata = table.Column<int>(nullable: false),
+                    Reclamatie = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Comenzi", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Users",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(nullable: true),
+                    WorkingPlace = table.Column<int>(nullable: false),
+                    Username = table.Column<string>(nullable: true),
+                    Password = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Users", x => x.Id);
                 });
         }
 
@@ -27,6 +46,9 @@ namespace ServiceAuto.API.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Comenzi");
+
+            migrationBuilder.DropTable(
+                name: "Users");
         }
     }
 }

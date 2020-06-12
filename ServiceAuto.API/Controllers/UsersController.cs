@@ -15,7 +15,6 @@ namespace WebApi.Controllers
     {
 
         private readonly DataContext _context;
-        private readonly DataContext context;
 
         public UsersController(DataContext context)
         {

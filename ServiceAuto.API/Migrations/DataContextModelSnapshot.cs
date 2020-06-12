@@ -21,6 +21,9 @@ namespace ServiceAuto.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("Completata")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Descriere")
                         .HasColumnType("TEXT");
 
@@ -36,6 +39,12 @@ namespace ServiceAuto.API.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("PostLucru")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Reclamatie")
+                        .HasColumnType("TEXT");
+
                     b.HasKey("Id");
 
                     b.ToTable("Comenzi");
@@ -47,6 +56,9 @@ namespace ServiceAuto.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("ComandaCurenta")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Name")
                         .HasColumnType("TEXT");
 
@@ -56,8 +68,8 @@ namespace ServiceAuto.API.Migrations
                     b.Property<string>("Username")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("WorkingPlace")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("WorkingPlace")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 

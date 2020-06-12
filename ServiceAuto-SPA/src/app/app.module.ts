@@ -6,10 +6,15 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { LoginComponent } from './login/login.component';
 import { FooterComponent } from './footer/footer.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { TopmenuComponent } from './topmenu/topmenu.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { SideNavTogglerComponent } from './side-nav-toggler/side-nav-toggler.component';
+import { ListaComenziTodoComponent } from './lista-comenzi-todo/lista-comenzi-todo.component';
+import { ComandaComponent } from './comanda/comanda.component';
+import { ComandaCurentaComponent } from './comanda-curenta/comanda-curenta.component';
+import { ListaComenziFinalizateComponent } from './lista-comenzi-finalizate/lista-comenzi-finalizate.component';
 
 @NgModule({
    declarations: [
@@ -18,12 +23,18 @@ import { SidenavComponent } from './sidenav/sidenav.component';
       LoginComponent,
       FooterComponent,
       TopmenuComponent,
-      SidenavComponent
+      SidenavComponent,
+      SideNavTogglerComponent,
+      ListaComenziTodoComponent,
+      ComandaComponent,
+      ComandaCurentaComponent,
+      ListaComenziFinalizateComponent
    ],
    imports: [
       BrowserModule,
       AppRoutingModule,
       ReactiveFormsModule,
+      FormsModule,
       HttpClientModule
    ],
    providers: [],

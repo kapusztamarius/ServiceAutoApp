@@ -4,8 +4,9 @@ namespace ServiceAuto.API.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string WorkingPlace { get; set; }
+        public int WorkingPlace { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
+        public int ComandaCurenta { get; set; }
     }
 }

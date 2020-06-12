@@ -1,0 +1,35 @@
+<div class="row justify-content-center">
+<div class="w-75">
+<h1>Comenzi</h1>
+
+<table class="table">
+  <!-- <caption>My Todo's</caption> -->
+  <thead>
+    <tr>
+      <!-- <th>id</th> -->
+      <th>Descriere</th>
+      <th>Numar Masina</th>
+      <th>Post de lucru</th>
+      <th *ngIf="getWorkingPlace() === 0">Update</th>
+      <th *ngIf="getWorkingPlace() === 0">Delete</th>
+      <th *ngIf="getWorkingPlace() !== 0">Preia</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of orders">
+      <!-- <td>{{todo.id}}</td> -->
+      <td>{{order.descriere}}</td>
+      <td>{{order.numarMasina}}</td>
+      <td>{{order.postLucru}}</td>
+      <td *ngIf="getWorkingPlace() === 0"><button (click)="updateTodo(order.id)" class="btn btn-success">Update</button></td>
+      <td *ngIf="getWorkingPlace() === 0"><button (click)="deleteTodo(order.id)" class="btn btn-warning">Delete</button></td>
+      <td *ngIf="getWorkingPlace() !== 0"><button (click)="preiaComanda(order.id)" class="btn btn-success" [disabled]="order.postLucru !== 0" >Preia</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="row">
+  <button *ngIf="getWorkingPlace() === 0" (click)="addOrder()" class="btn btn-success">Add</button>
+</div>
+</div>
+</div>
